@@ -6,9 +6,7 @@ Before we start solving AWS WAF Captcha, there are some requirements and points 
 ## 🔒 Requirements:
 
 - CapSolver Key
-- Proxy (Optional)
-
-**Proxy is optional, depends on the task type used, will be required / optional.**
+- Proxy 
 
 ## 📒 Points to be aware of:
 
@@ -24,20 +22,20 @@ To verify the authenticity of the website URL, ensure that it returns a 405 stat
 To solve AWS WAF Captcha, follow our documentation. For this example, we will only use the required parameters. The task types for AWS WAF Captcha are:
 
 - ``AntiAwsWafTask``: This task type requires your own proxies.
-- ``AntiAwsWafTaskProxyLess``: This task type doesn't require your own proxies.
 
 In this case, the task type that will be used in this blog, will be `AntiAwsWafTaskProxyLess`.
 
 ## 📤 Step 1: Submit the information to Capsolver
 
-```http
+```json
 POST https://api.capsolver.com/createTask
 {
  "clientKey":"yourapiKey",
  "task":
  {
- "type":"AntiAwsWafTaskProxyLess",
- "websiteURL":"https://efw47fpad9.execute-api.us-east-1.amazonaws.com/latest"
+ "type":"AntiAwsWafTask",
+ "websiteURL":"https://efw47fpad9.execute-api.us-east-1.amazonaws.com/latest",
+  "proxy":"yourproxy"
  }
 }
 ```
@@ -45,7 +43,7 @@ This will return a response that contains `taskId`, save this value and submit t
 
 ## 🔖 Step 2: Get the results
 We will need to retrieve the ``getTaskResult`` method until the captcha is solved. Retrieve every 3-5s.
-```http
+```json
 POST https://api.capsolver.com/getTaskResult
 Host: api.capsolver.com
 Content-Type: application/json
@@ -61,7 +59,4 @@ Captcha solution will look like:
 
 In conclusion, solving AWS WAF Captcha can be a daunting task, but with the help of capsolver.com, it can be done quickly and efficiently. By following the steps outlined above, you can easily solve AWS WAF Captcha.
 
-
- 
- 
-  
+CapSolver Team 💜
