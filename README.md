@@ -64,4 +64,4 @@ In conclusion, solving AWS WAF Captcha can be a daunting task, but with the help
 
  
  
- 
+  
