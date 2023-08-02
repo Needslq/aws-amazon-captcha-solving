@@ -66,4 +66,4 @@ Captcha solution will look like:
 In conclusion, solving AWS WAF Captcha can be a daunting task, but with the help of capsolver.com, it can be done quickly and efficiently. By following the steps outlined above, you can easily solve AWS WAF Captcha.
 
 CapSolver Team 💜
- 
+  
